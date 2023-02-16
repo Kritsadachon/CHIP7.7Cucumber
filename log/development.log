@@ -1,0 +1,1898 @@
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 13:09:04 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 13:09:04 +0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: movies: SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')):
+    18:       %th{:class => @date_header}= link_to 'Release Date', movies_path(:sort => 'release_date', :ratings => @selected_ratings), :id => 'release_date_header'
+    19:       %th More Info
+    20:   %tbody
+    21:     - @movies.each do |movie|
+    22:       %tr
+    23:         %td= movie.title
+    24:         %td= movie.rating
+  app/views/movies/index.html.haml:21:in `_app_views_movies_index_html_haml___108020566943945231_93825798761840'
+
+
+  Rendered /home/cap/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /home/cap/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/cap/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.3ms)
+  Rendered /home/cap/.rvm/gems/ruby-2.6.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.1ms)
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20111119180638)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/cap/_workspace/bdd/hw-bdd-cucumber-saasbook2e/rottenpotatoes/db/migrate/20111119180638_create_movies.rb:10)
+  [1m[35m (0.1ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 13:09:25 +0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 176ms (Views: 169.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2023-02-16 13:09:26 +0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2023-02-16 13:09:26 +0700
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 127.0.0.1 at 2023-02-16 13:09:26 +0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 13:09:26 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 13:12:56 +0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 13:12:56 +0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2023-02-16 13:12:56 +0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2023-02-16 13:12:56 +0700
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 127.0.0.1 at 2023-02-16 13:12:56 +0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 13:22:18 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 13:22:18 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 13:22:20 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 13:22:28 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OkCX1cRH5GfOEaAmwUslqM3QByX7F+XDFKk3M82+cAXl0jQcMyWv23OYTiYCE/LHwNv0RUoI/DoGmHQY8JjD8w==", "movie"=>{"title"=>"kuyraiyome", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "kuyraiyome"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 06:22:28.069298"], ["updated_at", "2023-02-16 06:22:28.069298"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 11ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 13:22:28 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 13:22:28 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 13:22:40 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-02-16 13:22:45 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/1" for 127.0.0.1 at 2023-02-16 13:22:47 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rEE9aPuIZkyPzvGTwdSwzaB5WCODLf9cVBO9z/4yWBVz056hDOot8DJHH5MCjGeirXKrQzIy5qVGIv7kwxTr4w==", "id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 1]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 5ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 13:22:47 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 13:22:48 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 13:22:50 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 13:27:05 +0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 13:27:08 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 16.5ms | ActiveRecord: 0.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 14:00:48 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 107ms (Views: 100.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 14:00:48 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 14:04:55 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 108ms (Views: 101.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 14:20:38 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 111ms (Views: 104.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 14:22:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 106ms (Views: 98.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 14:22:07 +0700
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 14:41:01 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:07 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:07 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:12 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 14:41:14 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 14:41:28 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0W58JRFR6JNqZ+cPVsg57K2+UHxOsTavWwlmFfmFHdEO/N/s5jOjL9fuCQ+VkO6DoLWjHP+uL1ZJOCU+xKOuJw==", "movie"=>{"title"=>"hehe", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "hehe"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 07:41:28.643115"], ["updated_at", "2023-02-16 07:41:28.643115"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 14:41:28 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:28 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 14:41:30 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 14:41:33 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b3JVvxtw84S+GuHK9TubcnmUyCLH4PDNdDjrfA7Aukmw4PZ27BK4OAOTD8o2Y0wddJ87Qnb/6TRmCahXM+YJvw==", "movie"=>{"title"=>"huhu", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "huhu"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 07:41:33.895725"], ["updated_at", "2023-02-16 07:41:33.895725"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 14:41:33 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:33 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 14:41:36 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 14:41:47 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T3o8Hrup3kv8AdUmrmaEmcSG4h7ygBpWv8UzMm0wDsGQ6J/XTMuV90GIOyZtPlP2yY0RfkOfA6+t9HAZUBa9Nw==", "movie"=>{"title"=>"aomsin", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "aomsin"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 07:41:47.214194"], ["updated_at", "2023-02-16 07:41:47.214194"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 14:41:47 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:47 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 14:41:49 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 14:41:49 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:55 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:41:55 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:59:28 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 112ms (Views: 104.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 14:59:29 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 14:59:32 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 14:59:32 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 14:59:34 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 14:59:39 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3mOGVm5Kd88Wo6gqFspRQzIZWy4aaTciJ8pbXH2c6GIB8SWfmSg8c6sqRirVkoYsPxKoTqt2Lts1+xh3QLpblA==", "movie"=>{"title"=>"gay", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "gay"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 07:59:39.122008"], ["updated_at", "2023-02-16 07:59:39.122008"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 14:59:39 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 14:59:39 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:01:51 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 112ms (Views: 104.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2023-02-16 15:01:55 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/2" for 127.0.0.1 at 2023-02-16 15:01:58 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yO5BIOsJ+VKpsr9YmVkWo/H3Bqn9X00fWLReutNOzk0XfOLpHGuy7hQ7UVhaAcHM/Pz1yUxAVOZKhR2R7mh9uw==", "id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:01:58 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:01:58 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2023-02-16 15:02:00 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/3" for 127.0.0.1 at 2023-02-16 15:02:02 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qC8kbxs5Zl1D4IMmPWFDQprwnC1vxkUt12qzFQIgrNZ3vYem7Fst4f5pbSb+OZQtl/tvTd7ZXNTFW/A+PwYfIA==", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 3ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:02:02 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:02:02 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2023-02-16 15:02:04 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered movies/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/4" for 127.0.0.1 at 2023-02-16 15:02:05 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iGvwn/iGVT4wG1Fi+XubQEvjcA71KOacaAdZnXPMMLhX+VNWD+Qego2Sv2I6I0wvRuiDbkQ3/2V6Nhq2TuqDTg==", "id"=>"4"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 4]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:02:05 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:02:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/5" for 127.0.0.1 at 2023-02-16 15:02:07 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered movies/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/5" for 127.0.0.1 at 2023-02-16 15:02:09 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rz90dPXAoKiItP+hCxVq6fCPBVOPvs8JodHzr3ryGxlwrde9AqLrFDU9EaHITb2G/YT2Mz6h1vCz4LCER9So7w==", "id"=>"5"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:02:09 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:02:09 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:02:10 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:02:10 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:02:27 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort_by=id" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort_by"=>"id"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:05 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 15:07:06 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:09:38 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:10:25 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:16:19 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:16:19 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:16:21 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:17:08 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 15:17:25 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:17:25 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:17:25 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 105ms (Views: 103.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 15:17:26 +0700
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:17:27 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:18:51 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:18:51 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:18:55 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:19:17 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4hAlbu4NQmQJlxXFxgwVX5iPR3rH3p38vqv2HZ2MPA49goanGW8J2LQe+8UFVMIwlYS0GnbBhAWsmrU2oKqP+A==", "movie"=>{"title"=>"gayking", "rating"=>"NC-17", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "gayking"], ["rating", "NC-17"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:19:17.222835"], ["updated_at", "2023-02-16 08:19:17.222835"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:19:17 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:19:17 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/6" for 127.0.0.1 at 2023-02-16 15:19:22 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered movies/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:25:27 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:25:37 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l05/BFhX57b0VoyRvnuCXmI5a4F8ESXCzTlJ1ZHBrCZI3NzNrzWsCknfYpF9I1UxbzKY4c0OPDvfCAr+rOcf0A==", "movie"=>{"title"=>"gayking2", "rating"=>"NC-17", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "gayking2"], ["rating", "NC-17"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:25:37.066082"], ["updated_at", "2023-02-16 08:25:37.066082"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:25:37 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:25:37 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:29:53 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:29:53 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:29:56 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-02-16 15:29:56 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."release_date" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:29:58 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:29:58 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:30:05 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:30:17 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xmu6Z2o8WmdoxErYyW2keWhp9fj1b0MAVy3Vf2zN43mB+RmunV4R29VNpNgKNXMWZWIGmERwWvlFHJZUUetQjw==", "movie"=>{"title"=>"manking", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "manking"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:30:17.767711"], ["updated_at", "2023-02-16 08:30:17.767711"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 3ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:30:17 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:17 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:25 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2023-02-16 15:30:27 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered movies/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:30:31 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:31 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:38 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:38 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'R'  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:41 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BNC-17%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:41 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:43 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:43 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" = 'R'  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:45 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"PG-13"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:45 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:48 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:48 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:50 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:50 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&title_sort=true&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 15:30:53 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "title_sort"=>"true", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:30:53 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:40:15 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 116ms (Views: 109.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:40:16 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:40:17 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:40:22 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tZR+tt1vlXs5Vux2oSSTwCUuu7pyC9JGGr9suqIJ22JqBt1/Kg3ex4TfAnZifESvKCVI2sMUy78Iji+Rny9olA==", "movie"=>{"title"=>"test1", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "test1"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:40:22.654600"], ["updated_at", "2023-02-16 08:40:22.654600"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:40:22 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:40:22 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2023-02-16 15:40:25 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered movies/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:43:49 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:44:03 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 118ms (Views: 111.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:44:07 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:44:11 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4A2i5wInb+COIzT6DB42pwEwViiJ3zKmxGh2gqR/yzoEpVCa2rWAz+xYtMraK+1kQ8yOBM4ZTOJIOLxN7dM2g==", "movie"=>{"title"=>"test2", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "test2"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:44:11.169459"], ["updated_at", "2023-02-16 08:44:11.169459"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:44:11 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:44:11 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:46:29 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 115ms (Views: 108.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:46:30 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:46:35 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U6zHBLKklJL0lfqJhroyDNxJZvE1Etj+cgd8rh4IElyMPmTNRcbfLkkcFIlF4uVj0UKVkYQNwQdgNj+FIy6hqg==", "movie"=>{"title"=>"test3", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "test3"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:46:35.906048"], ["updated_at", "2023-02-16 08:46:35.906048"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 6ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:46:35 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:46:35 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/11" for 127.0.0.1 at 2023-02-16 15:46:39 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:56:12 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 117ms (Views: 109.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 15:56:14 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-02-16 15:56:18 +0700
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yoKHNpe0EChSvYlln3vDyEIODmUsz4v+R1oR1ndWt9EVECT/YNZblO80Z2VcIxSnTwX9BZ3QkgdVa1L9SnAEJw==", "movie"=>{"title"=>"test4", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "test4"], ["rating", "G"], ["release_date", "2023-02-16 00:00:00.000000"], ["created_at", "2023-02-16 08:56:18.887497"], ["updated_at", "2023-02-16 08:56:18.887497"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:56:18 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:56:18 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2023-02-16 15:56:21 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/12/edit" for 127.0.0.1 at 2023-02-16 15:56:23 +0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered movies/edit.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/12" for 127.0.0.1 at 2023-02-16 15:56:37 +0700
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EduZRT1qm9JoupVBn2VgUNrgYPX4URcjxZkJrHwcd/DOSTqMygjQbtUze0FcPbc/1+uTlUlODtrXqEqHQTrEBg==", "movie"=>{"title"=>"test4doggo", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"2", "release_date(3i)"=>"16"}, "commit"=>"Update Movie Info", "id"=>"12"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["title", "test4doggo"], ["updated_at", "2023-02-16 08:56:37.053309"], ["id", 12]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies/12
+Completed 302 Found in 5ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2023-02-16 15:56:37 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 15:56:41 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 15:56:41 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-02-16 16:20:00 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 116ms (Views: 108.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 16:42:39 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 16:42:39 +0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 124ms (Views: 115.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-02-16 16:42:40 +0700
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 127.0.0.1 at 2023-02-16 16:42:40 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 17:02:21 +0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 111ms (Views: 104.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 127.0.0.1 at 2023-02-16 17:02:22 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 17:02:22 +0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 17:19:02 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:19:02 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 127.0.0.1 at 2023-02-16 17:19:02 +0700
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 17:19:10 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:19:10 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 17:19:15 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:19:15 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:45:33 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 116ms (Views: 108.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:45:34 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 17:45:36 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:45:36 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 17:45:40 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 17:45:40 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:45:40 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 17:49:13 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 19:43:35 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:43:35 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:43:35 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 112ms (Views: 109.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:27 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 90ms (Views: 83.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/6" for 127.0.0.1 at 2023-02-16 19:51:29 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered movies/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/6/edit" for 127.0.0.1 at 2023-02-16 19:51:31 +0700
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered movies/edit.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/6" for 127.0.0.1 at 2023-02-16 19:51:33 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wwTpvCoKkyeB3o1IKXPA9Y+0+vqctAg6G9YyWAEIbIKYE30NEh++SL9ZwG+W+iBNQ4ARF1js0YSMXJPyNLIRkg==", "id"=>"6"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 6]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:34 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:34 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2023-02-16 19:51:35 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered movies/show.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/7" for 127.0.0.1 at 2023-02-16 19:51:37 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZKcPOcSlRg+Bcdb8be9IYjEATN40huUbReFIqzhirH0/sJuI/LBrYL/2m9vSZqja/TSnM/DePKXSa+kBDdjRbQ==", "id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 7]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 3ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:37 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:37 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/8" for 127.0.0.1 at 2023-02-16 19:51:38 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered movies/show.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/8" for 127.0.0.1 at 2023-02-16 19:51:40 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TW1J4knAoElJeJO0kG00HMHZmnS+aB0gjfG93JCyExgWet1TcdWNJnf/3pMv5NSkDe1xmXowxJ4aexx2pQhuCA==", "id"=>"8"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 8]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:40 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:40 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2023-02-16 19:51:41 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered movies/show.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/9" for 127.0.0.1 at 2023-02-16 19:51:42 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MjFpiKbTbmZDqWZC09YevS8XlCErNXrLJ38eXXALhTdpJv05nsZDCX0uK2VsX/4F4yN/zO9to3Ww9b/3RbH4Jw==", "id"=>"9"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 9]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 5ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:42 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:42 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/10" for 127.0.0.1 at 2023-02-16 19:51:43 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered movies/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/10" for 127.0.0.1 at 2023-02-16 19:51:45 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vLWUqPgUnCQSGHkh6v3fY0ZWhXFf5K27SGCx1CVV7THnogAZwAGxSyyfNAZVdD/bimJunJu8dAXf6hB+EO+QIQ==", "id"=>"10"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 10]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:45 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:45 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/11" for 127.0.0.1 at 2023-02-16 19:51:46 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered movies/show.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/11" for 127.0.0.1 at 2023-02-16 19:51:47 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"STqefIduBI0nSxJ0sOmKyoc5pusmf/J1JXqtisf5DlISLQrNv3sp4hnMX1MPYGpySw1NBuInK8uy8Awg8kNzQg==", "id"=>"11"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 11]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 5ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:47 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:47 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/12" for 127.0.0.1 at 2023-02-16 19:51:48 +0700
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/movies/12" for 127.0.0.1 at 2023-02-16 19:51:49 +0700
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KBtQTc2drBl3bAK0XlA8jnreUZhNc7J8wS20wJkgOtFzDMT89YiBdknrT5Ph2dw2tuq6dYkra8JWpxVqrJpHwQ==", "id"=>"12"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies" WHERE "movies"."id" = ?  [["id", 12]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 4ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:51:49 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:49 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:51:51 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings[G]=1&ratings[NC-17]=1&ratings[PG]=1&ratings[PG-13]=1" for 127.0.0.1 at 2023-02-16 19:52:09 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 127.0.0.1 at 2023-02-16 19:52:09 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13')
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 19:52:19 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 19:52:19 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1" for 127.0.0.1 at 2023-02-16 19:52:19 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13')[0m
+  Rendered movies/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 19:52:22 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:52:22 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 19:54:26 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 19:54:50 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.489719"], ["updated_at", "2023-02-16 13:42:12.489719"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.493898"], ["updated_at", "2023-02-16 13:42:12.493898"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.496409"], ["updated_at", "2023-02-16 13:42:12.496409"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.498203"], ["updated_at", "2023-02-16 13:42:12.498203"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.500245"], ["updated_at", "2023-02-16 13:42:12.500245"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.501907"], ["updated_at", "2023-02-16 13:42:12.501907"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.503675"], ["updated_at", "2023-02-16 13:42:12.503675"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.505336"], ["updated_at", "2023-02-16 13:42:12.505336"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.507871"], ["updated_at", "2023-02-16 13:42:12.507871"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2023-02-16 13:42:12.509479"], ["updated_at", "2023-02-16 13:42:12.509479"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 20:43:14 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 113ms (Views: 106.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-02-16 21:28:33 +0700
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 21:28:42 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 21:28:44 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BNC-17%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-02-16 21:28:46 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "NC-17"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-16 22:21:34 +0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-02-16 22:21:34 +0700
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1" for 127.0.0.1 at 2023-02-16 22:21:34 +0700
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 111ms (Views: 108.5ms | ActiveRecord: 0.7ms)
